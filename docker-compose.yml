@@ -1,0 +1,7 @@
+services:
+  frontend:
+    build: .
+    container_name: innotech_profile
+    ports:
+      - "9007:80"
+    restart: unless-stopped
