@@ -99,7 +99,7 @@ export default function Home() {
               <h2 className="mt-3 text-[32px] lg:text-[42px] font-semibold tracking-[-0.03em] leading-none">Built for the field</h2>
               <p className="mt-3 text-zinc-600 max-w-[58ch]">Hardware-software integrated solutions tested for industrial environments. Click to view full specification.</p>
             </div>
-            <div className="text-sm text-zinc-500">1 product · Click card to view datasheet</div>
+            <div className="text-sm text-zinc-500">3 products · Click card to view datasheet</div>
           </div>
 
           {/* Product Card — left: name + info, right: 2 images */}
@@ -209,7 +209,7 @@ export default function Home() {
               {/* Right — single image full */}
               <div className="relative bg-zinc-50 lg:border-l border-zinc-200 p-4 lg:p-6">
                 <div className="grid grid-cols-1 gap-4 h-full">
-                  <div className="relative rounded-2xl overflow-hidden bg-white border border-zinc-200 aspect-[4/3] lg:aspect-auto lg:h-full">
+                  <div className="relative rounded-2xl overflow-hidden bg-white border border-zinc-200 aspect-[5/6] lg:aspect-auto lg:h-full">
                     <img
                       src="/WhatsApp%20Image%202026-09-16%20at%2019.54.06.jpeg"
                       alt="Efis Telpo P9 front view"
@@ -219,6 +219,66 @@ export default function Home() {
                     <div className="absolute bottom-2 left-2 right-2 rounded-xl bg-white/90 backdrop-blur border border-white/40 px-2.5 py-1.5 flex items-center justify-between">
                       <span className="text-[11px] font-medium">Telpo P9</span>
                       <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-zinc-900 text-white">P9</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute top-4 right-4 lg:top-6 lg:right-6 w-8 h-8 rounded-full bg-zinc-900 text-white grid place-items-center group-hover:scale-110 transition-transform">
+                  <span className="text-sm">↗</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Product Card TPS360 */}
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            onClick={() => setActiveProduct('tps360')}
+            className="group relative cursor-pointer rounded-[28px] border border-zinc-200 bg-zinc-50 overflow-hidden hover:border-zinc-300 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all mt-6"
+          >
+            <div className="grid lg:grid-cols-[1.05fr_1.15fr] gap-0">
+              {/* Left — product identity */}
+              <div className="p-7 lg:p-10 flex flex-col">
+                <div className="inline-flex self-start items-center gap-2 rounded-full bg-white border border-zinc-200 px-3 py-1.5 text-[11px] tracking-[0.14em] uppercase font-medium text-zinc-700">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> In stock · TPS360
+                </div>
+                <h3 className="mt-5 text-[28px] lg:text-[34px] font-semibold tracking-[-0.03em] leading-[0.95]">
+                  TPS360
+                  <br />
+                  Palm
+                </h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-zinc-600 max-w-[40ch]">
+                  Compact palm-sized biometric terminal with fingerprint and card verification. Designed for secure field authentication and identity programs.
+                </p>
+
+                <div className="mt-6 flex flex-wrap gap-2">
+                  <span className="inline-flex items-center rounded-full bg-white border border-zinc-200 px-3 py-1.5 text-xs font-medium">Fingerprint</span>
+                  <span className="inline-flex items-center rounded-full bg-white border border-zinc-200 px-3 py-1.5 text-xs font-medium">Contactless Card</span>
+                  <span className="inline-flex items-center rounded-full bg-white border border-zinc-200 px-3 py-1.5 text-xs font-medium">Pocket-sized</span>
+                  <span className="inline-flex items-center rounded-full bg-zinc-900 text-white px-3 py-1.5 text-xs font-medium">View datasheet →</span>
+                </div>
+
+                <div className="mt-auto pt-8 flex items-center gap-3 text-sm">
+                  <span className="inline-flex h-9 px-5 items-center justify-center rounded-full bg-zinc-900 text-white font-medium group-hover:bg-black transition-colors">Lihat spesifikasi</span>
+                  <span className="text-zinc-500 hidden sm:inline">Klik untuk buka dokumen lengkap</span>
+                </div>
+              </div>
+
+              {/* Right — single image full */}
+              <div className="relative bg-white lg:border-l border-zinc-200 p-4 lg:p-6">
+                <div className="grid grid-cols-1 gap-4 h-full">
+                  <div className="relative rounded-2xl overflow-hidden bg-white border border-zinc-200 aspect-[2/3] lg:aspect-auto lg:h-full">
+                    <img
+                      src="/tps360.png"
+                      alt="TPS360 Palm terminal"
+                      className="w-full h-full object-contain p-3 group-hover:scale-[1.02] transition-transform duration-700"
+                      onError={(e) => (e.currentTarget.style.display = "none")}
+                    />
+                    <div className="absolute bottom-2 left-2 right-2 rounded-xl bg-white/90 backdrop-blur border border-white/40 px-2.5 py-1.5 flex items-center justify-between">
+                      <span className="text-[11px] font-medium">TPS360 Palm</span>
+                      <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-zinc-900 text-white">TPS360</span>
                     </div>
                   </div>
                 </div>
@@ -362,7 +422,7 @@ export default function Home() {
               <div className="flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-emerald-500" />
                 <h3 className="text-sm font-semibold tracking-tight">
-                  {activeProduct === "p9" ? "Efis Telpo P9 - Smart Payment POS" : "EFIS Portable Touch Screen - S116 Datasheet"}
+                  {activeProduct === "p9" ? "Efis Telpo P9 - Smart Payment POS" : activeProduct === "tps360" ? "TPS360 Palm - Biometric Terminal" : "EFIS Portable Touch Screen - S116 Datasheet"}
                 </h3>
               </div>
               <button
@@ -374,8 +434,8 @@ export default function Home() {
             </div>
             <div className="flex-1 overflow-auto bg-[#f3f4f6]">
               <iframe
-                src={activeProduct === "p9" ? "/EFIS_Telpo_P9.html" : "/efis_portable_touch_screen.html"}
-                title={activeProduct === "p9" ? "Efis Telpo P9 specification sheet" : "EFIS Portable Touch Screen S116 specification sheet"}
+                src={activeProduct === "p9" ? "/EFIS_Telpo_P9.html" : activeProduct === "tps360" ? "/TPS360_Palm.html" : "/efis_portable_touch_screen.html"}
+                title={activeProduct === "p9" ? "Efis Telpo P9 specification sheet" : activeProduct === "tps360" ? "TPS360 Palm specification sheet" : "EFIS Portable Touch Screen S116 specification sheet"}
                 className="w-full h-[72vh] lg:h-[75vh] border-0 block bg-white"
               />
             </div>
